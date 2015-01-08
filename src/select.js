@@ -943,7 +943,7 @@
                 for (var p = list.length - 1; p >= 0; p--) {
                   locals[$select.parserResult.itemName] = list[p];
                   result = $select.parserResult.modelMapper(scope, locals);
-                  if (result == value){
+                  if (angular.equals(result,value)){/*very important!, witout that init object that came with the model not match obkects in list*/
                     resultMultiple.unshift(list[p]);
                     return true;
                   }
